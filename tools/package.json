@@ -1,0 +1,9 @@
+{
+  "name": "cf-deploy-build-tools",
+  "private": true,
+  "type": "module",
+  "description": "Dev-only tooling to build the obfuscated trial plugin. Not part of any shipped plugin.",
+  "devDependencies": {
+    "javascript-obfuscator": "5.5.0"
+  }
+}

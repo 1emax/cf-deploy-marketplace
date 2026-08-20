@@ -1,0 +1,17 @@
+{
+  "name": "cf-deploy-marketplace",
+  "owner": {
+    "name": "Lemax"
+  },
+  "description": "Tools for publishing static sites to Cloudflare Pages",
+  "plugins": [
+    {
+      "name": "cf-deploy",
+      "source": "./plugins/cf-deploy",
+      "description": "Publish local folders to Cloudflare Pages, add domains, and point DNS — all through the Cloudflare API",
+      "version": "1.0.0",
+      "category": "deployment",
+      "tags": ["cloudflare", "pages", "deploy", "dns"]
+    }
+  ]
+}

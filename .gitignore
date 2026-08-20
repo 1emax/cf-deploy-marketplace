@@ -1,0 +1,14 @@
+# Per-site state written next to a published folder — never part of the plugin
+.cf-deploy.json
+
+# Local credentials must never be committed
+.env
+config.json
+
+# NOTE: node_modules/ under plugins/ is intentionally NOT ignored.
+# Claude Code plugins ship as plain files with no npm install step, so the single
+# runtime dependency (blake3-wasm, ~1MB) has to be vendored into each plugin's own copy.
+
+# tools/ is dev-only build tooling (the trial obfuscator) — never shipped in a plugin,
+# so its node_modules doesn't need to be committed the way the plugins' do.
+tools/node_modules/

@@ -1,0 +1,19 @@
+{
+  "name": "cf-deploy-trial",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Publish local folders to Cloudflare Pages with domain setup",
+  "bin": {
+    "cf-deploy": "./bin/cf-deploy"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "blake3-wasm": "2.1.5"
+  }
+}

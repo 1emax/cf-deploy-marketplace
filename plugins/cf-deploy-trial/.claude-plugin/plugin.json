@@ -1,0 +1,15 @@
+{
+  "name": "cf-deploy-trial",
+  "description": "Publish local folders to Cloudflare Pages, add domains, and point DNS — all through the Cloudflare API — trial, available through Aug 22, 2026",
+  "version": "1.0.0",
+  "author": {
+    "name": "Inna"
+  },
+  "keywords": [
+    "cloudflare",
+    "pages",
+    "deploy",
+    "static-site",
+    "dns"
+  ]
+}
