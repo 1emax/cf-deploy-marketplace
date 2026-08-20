@@ -12,3 +12,7 @@ config.json
 # tools/ is dev-only build tooling (the trial obfuscator) — never shipped in a plugin,
 # so its node_modules doesn't need to be committed the way the plugins' do.
 tools/node_modules/
+
+# This repo is the CLIENT-FACING trial repo (cf-deploy-marketplace) — the full dev source
+# must never be committed here, even by accident.
+plugins/cf-deploy/

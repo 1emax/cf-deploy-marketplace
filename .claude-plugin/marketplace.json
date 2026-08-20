@@ -3,15 +3,15 @@
   "owner": {
     "name": "Lemax"
   },
-  "description": "Tools for publishing static sites to Cloudflare Pages",
+  "description": "cf-deploy trial",
   "plugins": [
     {
-      "name": "cf-deploy",
-      "source": "./plugins/cf-deploy",
-      "description": "Publish local folders to Cloudflare Pages, add domains, and point DNS — all through the Cloudflare API",
+      "name": "cf-deploy-trial",
+      "source": "./plugins/cf-deploy-trial",
+      "description": "Publish local folders to Cloudflare Pages, add domains, and point DNS — all through the Cloudflare API — trial, available through Aug 22, 2026",
       "version": "1.0.0",
       "category": "deployment",
-      "tags": ["cloudflare", "pages", "deploy", "dns"]
+      "tags": ["cloudflare", "pages", "deploy", "dns", "trial"]
     }
   ]
 }

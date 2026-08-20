@@ -6,8 +6,8 @@ the domain, point DNS. Everything through the Cloudflare API; no `wrangler`, no 
 ## Install
 
 ```bash
-/plugin marketplace add https://github.com/1emax/upload_and_cf
-/plugin install cf-deploy-trial@upload_and_cf
+/plugin marketplace add https://github.com/1emax/cf-deploy-marketplace
+/plugin install cf-deploy-trial@cf-deploy-marketplace
 ```
 
 Then set up credentials once. `cf-deploy setup` prints these same instructions.
