@@ -88,14 +88,19 @@ cf-deploy                          # publish the current folder
 cf-deploy --dir ./site             # publish a specific folder
 cf-deploy --domain example.com     # publish and wire up the domain
 cf-deploy attach-domain --domain example.com
+cf-deploy move-domain --domain example.com --project other-site --yes
 cf-deploy status
 cf-deploy list
 cf-deploy doctor                   # what the token is actually allowed to do
 cf-deploy delete --project mysite  # dry run; add --yes to actually delete
 ```
 
-Deletes are two-step by design: without `--yes`, `cf-deploy delete` prints exactly what it
-would remove and stops. `--domain` matches a zone by **exact name**, so `www.example.com`
+Deletes and domain moves are two-step by design: without `--yes`, both commands print
+exactly what would happen and stop. Deleting a project detaches any custom domains and
+removes their DNS records first (Cloudflare otherwise refuses to delete a project with a
+domain still attached) — but only the records that still point at that project, so a
+domain already moved elsewhere first is never touched. `--domain` matches a zone by
+**exact name**, so `www.example.com`
 can never resolve to — and destroy — the `example.com` zone.
 
 Re-running is how you update a site: same command, new files. The Pages project, the
