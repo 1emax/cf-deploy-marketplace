@@ -8,6 +8,15 @@ allowed-tools: Bash(cf-deploy:*), Bash(printf *)
 
 The `cf-deploy` command (already on PATH) does the work. Run it from the site's folder.
 
+**You run `cf-deploy`, not the user.** Most people asking for this have never opened a
+terminal. When the CLI's own output says things like "re-run this command" or "add one
+with: cf-deploy ...", that's written for whoever's driving it — which is you. Never paste
+a raw `cf-deploy ...` command into a reply and tell the user to run it; run it yourself
+when the moment comes, and tell the user what happened in plain language. The one
+exception is a step the CLI genuinely can't do for them, like updating nameservers at
+their registrar — that's the only kind of thing to hand back to the user as an action
+item.
+
 ## First, know which account
 
 Credentials live in profiles in `~/.config/cf-deploy/config.json` (file mode 600).
@@ -109,9 +118,16 @@ cf-deploy attach-domain --domain example.com
 Three things can happen, and each needs different handling:
 
 1. **Zone is pending** — the domain is new to Cloudflare. The command prints nameservers.
-   Relay them to the user: they must set these at their registrar (where the domain was
-   bought), and it usually takes a few hours. Nothing else can proceed until then; tell
-   them to re-run afterwards. The `.pages.dev` URL still works in the meantime.
+   Relay them to the user in plain language: they need to set these at their domain's
+   registrar, and it usually takes a few hours to propagate. That's the one step only
+   they can do.
+
+   **Do not tell the user to run a `cf-deploy` command themselves** — most people using
+   this have never opened a terminal. The re-run afterward is your job, not theirs. Tell
+   them something like "once you've updated those, just tell me (or ask me to check
+   later) and I'll finish connecting the domain" — then, in that later turn, run
+   `cf-deploy attach-domain --domain <domain>` yourself. The `.pages.dev` URL still works
+   in the meantime, so mention that too.
 
 2. **Domain already has DNS records** — the command refuses and lists them, because the
    domain is already serving something. **Show the user exactly what would be replaced and
